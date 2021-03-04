@@ -1,0 +1,22 @@
+---
+ - name: A playbook that throws an error in the block.
+   hosts: planetexpress
+
+   tasks:
+    - block:
+       - shell: "echo 'My single task ran' > example.txt"
+       - shell: "echo 'My second task ran' >> example.txt"
+       - shell: "/bin/false" # This always returns a false value
+      rescue:
+       - shell: "echo 'My rescue code ran. Maybe it undoes whatever the block tried to do' >> example.txt"
+       - fail:
+                 msg: "block 1 failed"
+      always:
+       - shell: "echo 'This always runs. Maybe it is a commit, or an entry in a log' >> example.txt"
+
+    - block:
+       - shell: "echo 'This task is in the second block' >> example.txt"
+      rescue:
+       - shell: "echo 'This rescue code in the second block ran' >> example.txt"
+      always:
+       - shell: "echo 'This always runs but is from the second block' >> example.txt"         
