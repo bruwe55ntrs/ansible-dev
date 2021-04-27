@@ -1,9 +1,7 @@
- # ansible-dev (Project Title)
-
+  # ansible-dev (Project Title)
+ 
  One paragraph of your project description goes here. Describe what you're trying to do.
  What is the purpose of putting up this repo?
- 
- Learning to track my code for ansible development March 2021
  
  ## Getting Started
  
@@ -31,4 +29,4 @@
          
  ## Authors
  
- * **BRuwe55ntrs** - *Initial work* - [YourWebsite](https://example.com/)
+  * **BRuwe55ntrs** - *Initial work* - [YourWebsite](https://example.com/)
